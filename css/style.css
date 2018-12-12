@@ -1,0 +1,832 @@
+*{
+    box-sizing: border-box;
+}
+
+:root {
+    --header-height: 86px;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: black;
+    animation: backgroundAnimate 10s ease-in;
+    color: #fff;
+    background-color: black;
+}
+
+@keyframes backgroundAnimate {
+    0% { background-color: black; }
+    50% { background-color: #404040; }
+    100% { background-color: black; }
+}
+
+a, li {
+    color: #fff;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 400;
+}
+
+.desktop {
+    display: none;
+}
+
+.button {
+    font-size: 18px;
+    font-weight: 600;
+    color: #c60000;
+    background-color: transparent;
+    border: 2px solid #c60000;
+    border-radius: 2px;
+    padding: 10px 40px 10px 40px;
+    margin-top: 40px;
+}
+
+/* image animation */
+.zoomAnimation {
+    animation: zoomin 10s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoomin {
+    0% {transform: scale(1);}
+    100% {transform: scale(1.5);}
+}
+
+/* mobile first aproach */
+
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-rows: var(--header-height) 1fr 1fr;
+}
+
+
+/* header */
+
+header {
+    height: var(--header-height);
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 20px var(--header-height) 1fr 20px;
+    grid-template-rows: 1fr;
+    background-color: #000;
+}
+
+header .navBar-menu {
+    display: none;
+}
+
+header .navBar-language {
+    display: none;
+}
+
+/* burger-menu */
+
+.burger-menu {
+    grid-column: 2/2;
+}
+
+.burger-menu label .container {
+    position: absolute;
+    top: 70px;
+    width: 30px;
+    height: 2px;
+}
+
+.burger-menu .bar1,
+.burger-menu .bar2,
+.burger-menu .bar3 {
+    display: grid;
+    width: 40px;
+    height: 5px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 10px 10px 0px 50px;
+    transition: 0.4s;
+}
+
+.burger-menu .change .bar1 {
+    transform: rotate(-45deg) translate(-25px, 6px);
+}
+
+.burger-menu .change .bar2 {
+    opacity: 0;
+}
+
+.burger-menu .change .bar3 {
+    transform: rotate(45deg) translate(-30px, -8px);
+}
+
+.burger-menu .change .bar1 {
+    transform: rotate(-45deg) translate(-15px, 6px);
+}
+
+.burger-menu .change .bar2 {
+    opacity: 0;
+}
+
+.burger-menu .change .bar3 {
+    transform: rotate(45deg) translate(-15px, -6px);
+}
+
+.burger-menu label input {
+    display: none;
+}
+
+.burger-menu #menu {
+    position: absolute;
+    top: -55px;
+    left: -20px;
+    z-index: 100;
+    width: 130px;
+    height: 130px;
+    background: #000;
+    border-radius: 50% 50% 50% 50%;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.burger-menu #menu.expand {
+    box-shadow: 0 0 0 100vw #000, 0 0 0 100vh #000;
+    border-radius: 0;
+}
+
+.burger-menu .appear {
+    opacity: 1
+}
+
+.burger-menu label ul {
+    font-size: 28px;
+    z-index: 200;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-transition: .25s 0s ease-in-out;
+    transition: .25s 0s ease-in-out;
+}
+
+.burger-menu label a {
+    margin-bottom: 1em;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.burger-menu .socialMedia {
+    display: flex;
+}
+
+.burger-menu .socialMedia li {
+    flex: 1 1 0;
+    height: 42px;
+}
+
+.burger-menu .socialMedia a {
+    display: inline; 
+}
+
+.burger-menu .socialMedia img {
+    height: 100%;
+    width: 32px;
+}
+
+.burger-menu .language {
+    margin-top: 24px;
+    width: 100px;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+}
+
+.burger-menu .language .vbar {
+    border-left: 3px solid #fff;
+    height: 34px;
+}
+
+.burger-menu .language .selected {
+    color: #FF2D55;
+}
+
+header .logo {
+    grid-column: 3/3;
+    color: #fff;
+    justify-self: center;
+    align-self: center;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* main */
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+}
+
+/* details page */
+
+main .detailsSection {
+    grid-column: 2/2;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-column-gap: 20px;
+    padding-top: 20px;
+}
+
+main .detailsSection p {
+    margin: 0;
+    text-align: center;
+}
+
+main .back {
+    grid-column: 1/-1;
+    width: 40px;
+    justify-self: right;
+    margin-right: 40px;
+}
+
+main .detailsSection .by, main .detailsSection .albumYear, main .detailsSection .albumSongsNumber {
+    color: #9B9B9B;
+}
+
+main .detailsSection img {
+    grid-column: 1/1;
+    grid-row: 2/2;
+}
+
+main .detailsSection .albumDetails {
+    grid-column: 1/1;
+    grid-row: 3/3;
+}
+
+main .detailsSection .albumLinks {
+    grid-column: 2/2;
+    grid-row: 2/3;
+}
+
+main .detailsSection .albumTitle {
+    font-size: 18px;
+}
+
+main .detailsSection .albumTitle {
+    font-size: 18px;
+}
+
+main .detailsSection .albumAuthor {
+    font-size: 14px;
+}
+
+main .detailsSection .albumYear, main .detailsSection .albumSongsNumber {
+    font-size: 10px;
+}
+
+main .detailsSection .albumSeparator {
+    display: inline-block;
+    background: #9B9B9B;
+    width: 5px;
+    height: 5px;
+    margin: 0 5px 1px 5px;
+    border-radius: 50%;
+}
+
+main .detailsSection .button {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    font-size: 14px;
+
+    border-image-source: linear-gradient(to right, white, red);
+    border-image-slice: 10;
+    color: white;
+}
+
+main .detailsSection .button:hover {
+    color: red;
+    border-image-source: linear-gradient(to right, red, red);
+}
+
+/* spotify songs */
+
+main .spotifySongs {
+    grid-column: 2/2;
+}
+
+/* welcome screen */
+
+main .welcomeSection {
+    grid-column: 1/-1;
+    height: calc(100vh - var(--header-height));
+    overflow: hidden;
+}
+
+main .welcomeSection img.artist {
+    object-fit: cover;
+    height: 100%;
+}
+
+main .welcomeSection .arrow {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 40px);
+    width: 80px;
+    z-index: 1;
+}
+
+main .welcomeSection .arrow img {
+    transform: scaleY(-1);
+}
+
+/* tour dates section */
+
+main .tourDatesSection {
+    grid-column: 2/2;
+}
+
+main .tourDatesSection .dateSelector {
+    display: flex;
+    justify-content: space-around;
+}
+
+main .tourDatesSection .dateSelector a {
+    padding-top: 5px;
+}
+
+main .tourDatesSection .dateSelector .selected {
+    border-top: 1px solid #fff;
+}
+
+main .tourDatesSection .tourContainer {
+    grid-column: 1/-1;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+}
+
+main .tourDatesSection .tour {
+    grid-column: auto / span 1;
+}
+
+main .tourDatesSection .tour .tourImage {
+    height: 213px;
+    object-fit: cover;
+}
+
+main .tourDatesSection .tour .tourInfo {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    padding: 20px;
+    border: 1px solid #fff;
+    margin-top: -5px;
+}
+
+main .tourDatesSection .tour .tourInfo .tourDay {
+    grid-column: 1/1;
+    font-size: 29px;
+    text-align: center;
+}
+
+main .tourDatesSection .tour .tourInfo .tourTitle {
+    grid-column: 2/2;
+    align-self: center;
+    font-size: 19px;
+}
+
+main .tourDatesSection .tour .tourInfo .tourMonth {
+    grid-column: 1/1;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+    color: #C60000;
+}
+
+main .tourDatesSection .tour .tourInfo .tourDetails {
+    grid-column: 2/2;
+    font-size: 14px;
+}
+
+main .tourDatesSection .tour .tourInfo .tourSeparator {
+    display: inline-block;
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px 0 5px;
+    border-radius: 50%;
+}
+
+main .tourDatesSection .tour .tourTicketsBtn {
+    grid-column: 1/-1;
+    justify-self: center;
+}
+
+/* Separator */
+
+main .separator {
+    grid-column: 2/2;
+    justify-self: center;
+    width: 50%;
+    background-color: #fff;
+    height: 3px;
+    margin: 50px 0 50px 0;
+}
+
+/* Video section */
+
+main .videoSection {
+    grid-column: 2/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+}
+
+main .videoSection .video {
+    grid-column: auto / span 1;
+}
+
+main .videoSection .seeMoreBtn {
+    grid-column: 1/-1;
+    justify-self: center;
+}
+
+/* Photo Section */
+
+main .photoSection {
+    grid-column: 2/2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 0 20px 0 20px;
+}
+
+main .photoSection h2 {
+    grid-column: 1/-1;
+}
+
+main .photoSection .photo {
+    grid-column: auto / span 1;
+}
+
+/* Discography section */
+
+main .discographySection {
+    grid-column: 2/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    padding: 0 20px 0 20px;
+}
+
+main .discographySection .record {
+    grid-column: auto / span 1;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+main .discographySection .record .recordCoverContainer {
+    grid-column: 1/-1;
+    position: relative;
+}
+
+main .discographySection .record .recordCoverContainer .recordCover {
+    width: 100%;
+    object-fit: cover;
+}
+
+main .discographySection .record .recordCoverContainer .recordTitle {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+main .discographySection .record .recordCoverContainer .recordDate {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    z-index: 1;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+main .discographySection .record .recordMore {
+    grid-column: 1/-1;
+    justify-self: center;
+}
+
+/** About section */
+
+main .aboutSection {
+    grid-column: 2/2;
+}
+
+/** Contact section */
+
+main .contactSection {
+    grid-column: 2/2;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+main .contactSection h2 {
+    grid-column: 1/-1;
+    grid-row: 1/1;
+}
+
+main .contactSection h3 {
+    margin-bottom: 0;
+}
+
+main .contactSection hr {
+    width: 150px;
+    margin-left: 0;
+}
+
+main .contactSection .bookingContainer {
+    grid-column: 1/-1;
+    grid-row: 2/2;
+}
+
+main .contactSection .emailContainer {
+    grid-column: 1/1;
+    grid-row: 3/3;
+}
+
+main .contactSection .bandMembersContainer {
+    grid-column: 1/1;
+    grid-row: 4/4;
+}
+
+main .contactSection .contactImage {
+    grid-column: 2/2;
+    grid-row: 3/5;
+}
+
+/* footer */
+
+footer {
+    grid-area: footer;
+}
+
+footer .footerImageContainer {
+    position: relative;
+}
+
+footer .footerImageContainer .arrow {
+    position: absolute;
+    left: calc(50% - 40px);
+    width: 80px;
+    bottom: 20px;
+    z-index: 1;
+}
+
+footer p {
+    text-align: center;
+    font-size: 12px;
+}
+
+footer .socialMedia {
+    display: flex;
+    justify-content: center;
+    padding-inline-start: 0;
+}
+
+footer .socialMedia li {
+    width: 42px;
+}
+
+footer .socialMedia li img {
+    height: 16px;
+}
+
+footer .copyright {
+    background-color: #2A2626;
+    padding: 5px 0 5px 0;
+    font-size: 10px;
+}
+
+/** DESKTOP */
+@media all and (min-width: 1200px) {
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: inline;
+    }
+
+    h2 {
+        margin-bottom: 80px;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+    
+    header {
+        grid-template-columns: 20px 1fr 100px 400px 20px;
+    }
+
+    header .navBar-menu {
+        display: flex;
+        grid-column: 2/2;
+        justify-content: space-between;
+        align-self: center;
+        padding: 20px;
+    }
+
+    header .navBar-menu li {
+        padding-top: 5px;
+    }
+
+    header .navBar-menu li.selected {
+        border-top: 1px solid white;
+    }
+
+    header .navBar-language {
+        grid-column: 3/3;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        padding-top: 5px;
+    }
+
+    header .navBar-language li {
+        margin: 0 5px 0 5px;
+    }
+    
+    header .navBar-language .vbar {
+        border-left: 1px solid #fff;
+        height: 24px;
+    }
+    
+    header .navBar-language .selected {
+        color: #FF2D55;
+    }
+
+    header .logo {
+        grid-column: 4/4;
+    }
+
+    /* main */
+    main {
+        grid-template-columns: 80px 1fr 80px;
+    }
+
+    main .separator {
+        width: 10%;
+    }
+
+    main .tourDatesSection {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    main .tourDatesSection h2 {
+        grid-column: 1/-1;
+    }
+
+    main .tourDatesSection .dateSelector {
+        grid-column: 1/1;
+        justify-content: center;
+        justify-self: left;
+    }
+
+    main .tourDatesSection .dateSelector a {
+        margin-right: 80px;
+    }
+
+    main .tourDatesSection .tourContainer {
+        grid-column: 1/1;
+    }
+
+    main .videoSection {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
+
+    main .videoSection h2 {
+        grid-column: 1/-1;
+    }
+
+    main .photoSection {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+
+    main .discographySection {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 100px;
+        grid-row-gap: 100px;
+    }
+
+    main .discographySection h2 {
+        grid-column: 1/-1;
+    }
+
+    main .aboutSection {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 40px;
+    }
+
+    main .aboutSection h2 {
+        grid-column: 1/-1;
+    }
+
+    main .aboutSection .aboutImage {
+        grid-column: 1/1;
+    }
+
+    main .aboutSection .aboutArtist {
+        grid-column: 2/2;
+    }
+
+    main .contactSection h2 {
+        grid-column: 1/-1;
+        grid-row: 1/1;
+    }
+    
+    main .contactSection .bookingContainer {
+        grid-column: 1/1;
+        grid-row: 2/2;
+    }
+    
+    main .contactSection .emailContainer {
+        grid-column: 1/1;
+        grid-row: 3/3;
+    }
+    
+    main .contactSection .bandMembersContainer {
+        grid-column: 1/1;
+        grid-row: 4/4;
+    }
+    
+    main .contactSection .contactImage {
+        grid-column: 2/2;
+        grid-row: 2/5;
+        height: 100%;
+        width: auto;
+        justify-self: center;
+    }
+
+    /* details page */
+    main.detailsPage {
+        grid-template-columns: 80px 1fr 2fr 80px;
+    }
+
+    main.detailsPage .detailsSection {
+        grid-column: 2/2;
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+    }
+
+    main.detailsPage .detailsSection img {
+        grid-column: 1/-1;
+        grid-row: 1/1;
+    }
+
+    main.detailsPage .detailsSection .albumDetails {
+        grid-column: 1/-1;
+        grid-row: 2/2;
+    }
+
+    main.detailsPage .detailsSection .albumLinks {
+        grid-column: 1/-1;
+        grid-row: 3/3;
+    }
+
+    main.detailsPage .detailsSection .albumLinks .button {
+        width: 200px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    main.detailsPage .spotifySongs {
+        grid-column: 3/3;
+    }
+}
