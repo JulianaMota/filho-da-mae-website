@@ -1,5 +1,3 @@
-const baseLink = "https://abmostudio.com/kea/2s-exame/wordpress/wp-json/wp/v2/";
-const param = new URLSearchParams(window.location.search);
 const catNav = document.querySelector(".dateSelector");
 const categID = param.get("catid");
 
@@ -128,7 +126,7 @@ function getDisc(){
 function showDisc(albumList){
     console.log(albumList);
     albumList.forEach(album => {
-        console.log(album);
+        console.log(album.id);
         const copy = templateDisc.cloneNode(true);
 
         if(album._embedded['wp:featuredmedia']){
@@ -136,14 +134,16 @@ function showDisc(albumList){
         }else {
             copy.querySelector(".recordCover").remove();
         }
-        
+        copy.querySelector(".recordTitle").innerHTML=album.title.rendered;
+        copy.querySelector(".recordDate").textContent=album.acf.date;
 
+        copy.querySelector(".recordMore").href="details.html?albumid="+album.id;
         document.querySelector(".discographySection").appendChild(copy);
 
     })
 }
 
-
-
 getDisc();
+
+
 
