@@ -6,7 +6,7 @@ const categID = param.get("catid");
 const templateTours = document.querySelector("#tour").content;
 
 function getTour(){
-    fetch(baseLink+"tour_dates?_embed").then(res => res.json()).then(sortData);
+    fetch(baseLink+"tour_dates?_embed").then(res => res.json()).then(showTour);
 }
 
 function getCat(){
@@ -28,10 +28,7 @@ function createCatMenu(catList){
     })
 }
 
-
 getCat();
-
-
 
 function showTour(tourList){
     console.log(tourList);
@@ -65,9 +62,16 @@ if(categID){
     getTour();
 }
 
-function sortData(data){
+/*function sortData(data){
     data.sort(function(a, b){
         return a.acf.date - b.acf.date
     })
+}*/
+
+function getVideos(){
+    fetch(baseLink+"videos?_embed").then(res => res.json()).then(showVideos);
 }
+
+
+
 
