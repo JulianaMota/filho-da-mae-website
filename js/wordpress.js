@@ -4,6 +4,12 @@ const catNav = document.querySelector(".dateSelector");
 const categID = param.get("catid");
 
 const templateTours = document.querySelector("#tour").content;
+const templateVideo = document.querySelector("#video").content;
+const templatePhotos = document.querySelector("#photo").content;
+const templateDisc = document.querySelector("#record").content;
+
+
+// TOUR SECTION //
 
 function getTour(){
     fetch(baseLink+"tour_dates?_embed").then(res => res.json()).then(showTour);
@@ -18,9 +24,9 @@ function getTourByCat(categID){
 }
 
 function createCatMenu(catList){
-    console.log(catList);
+    //console.log(catList);
     catList.forEach(cat=>{
-        console.log(cat);
+        //console.log(cat);
         const newATag = document.createElement("a");
         newATag.textContent=cat.name;
         newATag.href="?catid="+cat.id;
@@ -31,9 +37,9 @@ function createCatMenu(catList){
 getCat();
 
 function showTour(tourList){
-    console.log(tourList);
+    //console.log(tourList);
     tourList.forEach(tour =>{
-        console.log(tour);
+        //console.log(tour);
         const copy = templateTours.cloneNode(true);
 
         if(tour._embedded['wp:featuredmedia']){
@@ -68,10 +74,76 @@ if(categID){
     })
 }*/
 
+
+// VIDEO SECTION //
+
 function getVideos(){
-    fetch(baseLink+"videos?_embed").then(res => res.json()).then(showVideos);
+    fetch(baseLink+"videos").then(res => res.json()).then(showVideos);
+}
+
+function showVideos(videosList){
+    //console.log(videosList);
+    videosList.forEach(video => {
+     //console.log(video);
+     const copy = templateVideo.cloneNode(true);
+     copy.querySelector(".video").innerHTML=video.acf.video;
+     document.querySelector(".videoSection").appendChild(copy);
+    })
+}
+
+getVideos();
+
+
+// PHOTOS SECTION //
+
+function getPhotos(){
+    fetch(baseLink+"photos?_embed").then(res => res.json()).then(showPhotos);
+}
+
+function showPhotos(photosList){
+    //console.log(photosList);
+    photosList.forEach(photo => {
+        //console.log(photo);
+        const copy = templatePhotos.cloneNode(true);
+
+        if(photo._embedded['wp:featuredmedia']){
+            copy.querySelector(".photo").src=photo._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
+        }else {
+            copy.querySelector(".photo").remove();
+        }
+
+        document.querySelector(".photoSection").appendChild(copy);
+    })
+}
+
+getPhotos();
+
+
+// DISCOGRAPHY SECTION //
+
+function getDisc(){
+    fetch(baseLink+"discography?_embed").then(res => res.json()).then(showDisc);
+}
+
+function showDisc(albumList){
+    console.log(albumList);
+    albumList.forEach(album => {
+        console.log(album);
+        const copy = templateDisc.cloneNode(true);
+
+        if(album._embedded['wp:featuredmedia']){
+            copy.querySelector(".recordCover").src=album._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
+        }else {
+            copy.querySelector(".recordCover").remove();
+        }
+        
+
+        document.querySelector(".discographySection").appendChild(copy);
+
+    })
 }
 
 
 
+getDisc();
 

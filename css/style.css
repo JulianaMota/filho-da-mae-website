@@ -463,6 +463,7 @@ main .videoSection {
 
 main .videoSection .video {
     grid-column: auto / span 1;
+    justify-self: center;
 }
 
 main .videoSection .seeMoreBtn {
@@ -722,7 +723,9 @@ footer .copyright {
     }
 
     main .tourDatesSection .tourContainer {
-        grid-column: 1/1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 40px;
     }
 
     main .videoSection {
