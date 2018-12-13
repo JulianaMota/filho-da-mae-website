@@ -14,20 +14,25 @@ body {
     margin: 0;
     font-family: sans-serif;
     background-color: black;
-    animation: backgroundAnimate 10s ease-in;
+    /*animation: backgroundAnimate 10s ease-in;*/
+    background: linear-gradient(270deg, #2a2626, #000000);
+    background-size: 400% 400%;
+    animation: AnimationBack 30s ease infinite;
     color: #fafafa;
     font-weight: 100;
 }
 
-.hide{
-    display: none;
+@keyframes AnimationBack {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
-@keyframes backgroundAnimate {
+/*@keyframes backgroundAnimate {
     0% { background-color: black; }
     50% { background-color: #404040; }
     100% { background-color: black; }
-}
+}*/
 
 a, li {
     color: #fff;
@@ -373,7 +378,11 @@ main .tourDatesSection .dateSelector a {
     padding-top: 5px;
 }
 
-main .tourDatesSection .dateSelector .selected {
+main .tourDatesSection .dateSelector a:focus{
+    border-top: 1px solid #fff;
+}
+
+main .tourDatesSection .dateSelector a:hover{
     border-top: 1px solid #fff;
 }
 

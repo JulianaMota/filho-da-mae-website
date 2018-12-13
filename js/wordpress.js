@@ -12,7 +12,7 @@ const templateContact = document.querySelector("#contact").content;
 // TOUR SECTION //
 
 function getTour(){
-    fetch(baseLink+"tour_dates?_embed").then(res => res.json()).then(showTour);
+    fetch(baseLink+"tour_dates?_embed").then(res => res.json()).then(sortTour);
 }
 
 function getCat(){
@@ -39,7 +39,7 @@ getCat();
 function showTour(tourList){
     //console.log(tourList);
     tourList.forEach(tour =>{
-        //console.log(tour);
+        console.log(tour);
         const copy = templateTours.cloneNode(true);
 
         if(tour._embedded['wp:featuredmedia']){
@@ -68,11 +68,13 @@ if(categID){
     getTour();
 }
 
-/*function sortData(data){
+function sortTour(data){{
     data.sort(function(a, b){
-        return a.acf.date - b.acf.date
+        return b.acf.date - a.acf.date
     })
-}*/
+}
+    showTour(data)
+}
 
 
 // VIDEO SECTION //
@@ -122,13 +124,13 @@ getPhotos();
 // DISCOGRAPHY SECTION //
 
 function getDisc(){
-    fetch(baseLink+"discography?_embed").then(res => res.json()).then(showDisc);
+    fetch(baseLink+"discography?_embed").then(res => res.json()).then(sortAlbums);
 }
 
 function showDisc(albumList){
-    console.log(albumList);
+    //console.log(albumList);
     albumList.forEach(album => {
-        console.log(album.id);
+        //console.log(album.id);
         const copy = templateDisc.cloneNode(true);
 
         if(album._embedded['wp:featuredmedia']){
@@ -145,6 +147,14 @@ function showDisc(albumList){
     })
 }
 
+function sortAlbums(data){{
+    data.sort(function(a, b){
+        return b.acf.date_for_sort - a.acf.date_for_sort
+    })
+}
+    showDisc(data)
+}
+
 getDisc();
 
 
@@ -155,9 +165,9 @@ function getAbout(){
 }
 
 function showAbout(aboutList){
-    console.log(aboutList);
+    //console.log(aboutList);
     aboutList.forEach(data => {
-        console.log(data);
+        //console.log(data);
         const copy = templateAbout.cloneNode(true);
 
         if(data._embedded['wp:featuredmedia']){
@@ -181,9 +191,9 @@ function getContacts(){
 }
 
 function showContacts(contactList) {
-    console.log(contactList);
+    //console.log(contactList);
     contactList.forEach(contact => {
-        console.log(contact);
+        //console.log(contact);
         const copy = templateContact.cloneNode(true);
         copy.querySelector(".management").textContent=contact.acf.manager_name;
         copy.querySelector(".managerContact").textContent=contact.acf.manager_contact;
