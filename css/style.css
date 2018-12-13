@@ -467,6 +467,7 @@ main .videoSection {
     grid-column: 2/2;
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     grid-row-gap: 20px;
 }
 
@@ -477,6 +478,7 @@ main .videoSection .video {
 
 main .videoSection .seeMoreBtn {
     grid-column: 1/-1;
+    grid-row: 12/13;
     justify-self: center;
 }
 
