@@ -174,7 +174,7 @@ function showAbout(aboutList){
 
 getAbout();
 
-// ABOUT SECTION //
+// CONTACTS SECTION //
 
 function getContacts(){
     fetch(baseLink+"contacts").then(res => res.json()).then(showContacts);
@@ -188,6 +188,8 @@ function showContacts(contactList) {
         copy.querySelector(".management").textContent=contact.acf.manager_name;
         copy.querySelector(".managerContact").textContent=contact.acf.manager_contact;
         copy.querySelector(".booking").textContent=contact.acf.book_contact_rm;
+        copy.querySelector(".email").textContent=contact.acf.filho_da_mae_email;
+        copy.querySelector(".bandMembers").textContent=contact.acf.band_members;
 
         document.querySelector(".contactSection").appendChild(copy);
     })

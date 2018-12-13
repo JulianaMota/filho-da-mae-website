@@ -20,12 +20,32 @@ function showOneAlbum(data){
     copy.querySelector(".albumAuthorName").textContent=data.acf.by;
     copy.querySelector(".albumYear").textContent=data.acf.date;
     copy.querySelector(".albumSongsNumber").textContent=data.acf.songs_number;
-    copy.querySelector(".buyLink1").href=data.acf.buy_link;
-    copy.querySelector(".buyLink2").href=data.acf.buy_link;
-    copy.querySelector(".buyLink3").href=data.acf.buy_link;
-    copy.querySelector(".albumDigitalPrice").textContent=data.acf.digital_price;
-    copy.querySelector(".albumCDPrice").textContent=data.acf.disc_price;
-    copy.querySelector(".albumVinylPrice").textContent=data.acf.vinyl_price;
+
+    if(data.acf.digital_price){
+        copy.querySelector(".albumDigitalPrice").textContent=data.acf.digital_price;
+        copy.querySelector(".buyLink1").href=data.acf.buy_link;
+    }else {
+        copy.querySelector(".albumDigitalPrice").remove();
+        copy.querySelector(".buyLink1").innerHTML= "Sold Out";
+        copy.querySelector(".buyLink3").href= "#";
+    }
+    if(data.acf.disc_price){
+        copy.querySelector(".albumCDPrice").textContent=data.acf.disc_price;
+        copy.querySelector(".buyLink2").href=data.acf.buy_link;
+    }else {
+        copy.querySelector(".albumCDPrice").remove();
+        copy.querySelector(".buyLink2").innerHTML= "Sold Out";
+        copy.querySelector(".buyLink3").href= "#";
+    }
+    if(data.acf.vinyl_price){
+        copy.querySelector(".albumVinylPrice").textContent=data.acf.vinyl_price;
+        copy.querySelector(".buyLink3").href=data.acf.buy_link;
+    }else {
+        copy.querySelector(".albumVinylPrice").remove();
+        copy.querySelector(".buyLink3").innerHTML= "Sold Out";
+        copy.querySelector(".buyLink3").href= "#";
+    }
+
     copy.querySelector(".spotifySongs").innerHTML=data.acf.spotify_album;
 
 
