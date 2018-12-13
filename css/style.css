@@ -15,8 +15,8 @@ body {
     font-family: sans-serif;
     background-color: black;
     animation: backgroundAnimate 10s ease-in;
-    color: #fff;
-    background-color: black;
+    color: #fafafa;
+    font-weight: 100;
 }
 
 .hide{
@@ -398,7 +398,7 @@ main .tourDatesSection .tour .tourInfo {
     display: grid;
     grid-template-columns: 60px 1fr;
     padding: 20px;
-    border: 1px solid #fff;
+    border: 1px solid #fafafa;
     margin-top: -5px;
 }
 
@@ -429,7 +429,7 @@ main .tourDatesSection .tour .tourInfo .tourDetails {
 
 main .tourDatesSection .tour .tourInfo .tourSeparator {
     display: inline-block;
-    background: #fff;
+    background: #fafafa;
     width: 10px;
     height: 10px;
     margin: 0 5px 0 5px;
@@ -447,7 +447,7 @@ main .separator {
     grid-column: 2/2;
     justify-self: center;
     width: 50%;
-    background-color: #fff;
+    background-color: #fafafa;
     height: 3px;
     margin: 50px 0 50px 0;
 }

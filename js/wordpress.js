@@ -5,6 +5,8 @@ const templateTours = document.querySelector("#tour").content;
 const templateVideo = document.querySelector("#video").content;
 const templatePhotos = document.querySelector("#photo").content;
 const templateDisc = document.querySelector("#record").content;
+const templateAbout = document.querySelector("#about").content;
+const templateContact = document.querySelector("#contact").content;
 
 
 // TOUR SECTION //
@@ -146,4 +148,50 @@ function showDisc(albumList){
 getDisc();
 
 
+// ABOUT SECTION //
 
+function getAbout(){
+    fetch(baseLink+"about?_embed").then(res => res.json()).then(showAbout);
+}
+
+function showAbout(aboutList){
+    console.log(aboutList);
+    aboutList.forEach(data => {
+        console.log(data);
+        const copy = templateAbout.cloneNode(true);
+
+        if(data._embedded['wp:featuredmedia']){
+            copy.querySelector(".aboutImage").src=data._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
+        }else {
+            copy.querySelector(".aboutImage").remove();
+        }
+        copy.querySelector(".aboutArtist").innerHTML=data.content.rendered;
+
+        document.querySelector(".aboutSection").appendChild(copy);
+
+    })
+}
+
+getAbout();
+
+// ABOUT SECTION //
+
+function getContacts(){
+    fetch(baseLink+"contacts").then(res => res.json()).then(showContacts);
+}
+
+function showContacts(contactList) {
+    console.log(contactList);
+    contactList.forEach(contact => {
+        console.log(contact);
+        const copy = templateContact.cloneNode(true);
+        copy.querySelector(".management").textContent=contact.acf.manager_name;
+        copy.querySelector(".managerContact").textContent=contact.acf.manager_contact;
+        copy.querySelector(".booking").textContent=contact.acf.book_contact_rm;
+
+        document.querySelector(".contactSection").appendChild(copy);
+    })
+
+}
+
+getContacts();
