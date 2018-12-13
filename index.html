@@ -7,241 +7,241 @@
     <title>Filho da mae website</title>
 </head>
 <body>
-    <div class="wrapper">
-        <header>
-            <div class="burger-menu">
-                <label>
-                    <div id="menu">
-                        <div class="container">
-                            <div class="bar1"></div>
-                            <div class="bar2"></div>
-                            <div class="bar3"></div>
+<div class="wrapper">
+    <header>
+        <div class="burger-menu">
+            <label>
+                <div id="menu">
+                    <div class="container">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </div>
+                <ul>
+                    <li><a href="#tours">TOUR DATES</a></li>
+                    <li><a href="#videos">VIDEOS</a></li>
+                    <li><a href="#photos">PHOTOS</a></li>
+                    <li><a href="#discography">DISCOGRAPHY</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <div class="socialMedia">
+                        <li>
+                            <a href="#.html"><img src="images/facebookIcon.svg" alt="facebook"></a>
+                        </li>
+                        <li>
+                            <a href="#.html"><img src="images/twitterIcon.svg" alt="twitter"></a>
+                        </li>
+                        <li>
+                            <a href="#.html"><img src="/images/instagramIcon.svg" alt="Instagram"></a>
+                        </li>
+                        <li>
+                            <a href="#.html"><img src="/images/youTubeIcon.svg" alt="YouTube"></a>
+                        </li>
+                        <li>
+                            <a href="#.html"><img src="images/spotifyIcon.svg" alt="spotify"></a>
+                        </li>
+                    </div>
+                    <div class="language">
+                        <li><a href="#.html" class="selected">EN</a></li>
+                        <span class="vbar"></span>
+                        <li><a href="#.html">PT</a></li>
+                    </div>
+                </ul>
+            </label>
+        </div>
+
+        <nav class="navBar-menu">
+            <li class="selected"><a href="#tours">TOUR DATES</a></li>
+            <li><a href="#videos">VIDEOS</a></li>
+            <li><a href="#photos">PHOTOS</a></li>
+            <li><a href="#discography">DISCOGRAPHY</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </nav>
+
+        <div class="navBar-language">
+            <li><a href="#.html" class="selected">EN</a></li>
+            <span class="vbar"></span>
+            <li><a href="#.html">PT</a></li>
+        </div>
+
+        <img src="images/Filho-da-mae-logo.png" alt="Filho da mae" class="logo">
+    </header>
+
+    <main id="top">
+        <div class="welcomeSection" id="welcome">
+            <img class="artist zoomAnimation" src="images/29595430_1699988993429229_6240458030730774030_n.png">
+            <a href="#tours" class="arrow">
+                <img src="images/arrow.png">
+            </a>
+        </div>
+
+        <div class="tourDatesSection" id="tours">
+            <h2>TOUR DATES</h2>
+            <div class="dateSelector">
+                <!--<a href="" class="selected">upcoming</a>
+                <a href="">past</a>-->
+            </div>
+
+            <div class="tourContainer">
+                <template id="tour">
+                    <div class="tour">
+                        <img class="tourImage" src="" alt="tour image">
+                        <div class="tourInfo">
+                            <div class="tourDay"></div>
+                            <div class="tourTitle"></div>
+                            <div class="tourMonth"></div>
+                            <div class="tourDetails">
+                                <span class="tourWeekDayAndHour"></span>
+                                <span class="tourSeparator"></span>
+                                <span class="tourLocation"></span>
+                            </div>
+
+                            <a href="" class="button tourTicketsBtn">Get Tickets</a>
                         </div>
                     </div>
-                    <ul>
-                        <li><a href="#tours">TOUR DATES</a></li>
-                        <li><a href="#videos">VIDEOS</a></li>
-                        <li><a href="#photos">PHOTOS</a></li>
-                        <li><a href="#discography">DISCOGRAPHY</a></li>
-                        <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
-                        <div class="socialMedia">
-                            <li>
-                                <a href="#.html"><img src="images/facebookIcon.svg" alt="facebook"></a>
-                            </li>
-                            <li>
-                                <a href="#.html"><img src="images/twitterIcon.svg" alt="twitter"></a>
-                            </li>
-                            <li>
-                                <a href="#.html"><img src="/images/instagramIcon.svg" alt="Instagram"></a>
-                            </li>
-                            <li>
-                                <a href="#.html"><img src="/images/youTubeIcon.svg" alt="YouTube"></a>
-                            </li>
-                            <li>
-                                <a href="#.html"><img src="images/spotifyIcon.svg" alt="spotify"></a>
-                            </li>
-                        </div>
-                        <div class="language">
-                            <li><a href="#.html" class="selected">EN</a></li>
-                            <span class="vbar"></span>
-                            <li><a href="#.html">PT</a></li>
-                        </div>
-                    </ul>
-                </label>
+                </template>
+            </div>
+        </div>
+
+        <hr class="separator">
+
+        <div class="videoSection" id="videos">
+            <h2>VIDEOS</h2>
+
+            <template id="video">
+                <div class="video">
+                </div>
+            </template>
+
+            <a href="" class="button seeMoreBtn">See more</a>
+        </div>
+
+        <hr class="separator">
+
+        <div class="photoSection" id="photos">
+            <h2>PHOTOS</h2>
+
+            <template id="photo">
+                <img class="photo" src="">
+            </template>
+        </div>
+
+        <hr class="separator">
+
+        <div class="discographySection" id="discography">
+            <h2>DISCOGRAPHY</h2>
+
+            <template id="record">
+                <div class="record">
+                    <div class="recordCoverContainer">
+                        <img class="recordCover">
+                        <p class="recordTitle"></p>
+                        <p class="recordDate"></p>
+                    </div>
+
+                    <a href="" class="recordMore button">See more</a>
+                </div>
+            </template>
+        </div>
+
+        <hr class="separator">
+
+        <div class="aboutSection" id="about">
+            <h2>ABOUT</h2>
+
+            <template id="about">
+                <img class="aboutImage" src="images/29595430_1699988993429229_6240458030730774030_n.png">
+                <p class="aboutArtist"></p>
+            </template>
+        </div>
+
+        <hr class="separator">
+
+        <div class="contactSection" id="contact">
+            <h2>CONTACT</h2>
+            <div class="bookingContainer">
+                <h3>Booking</h3>
+                <hr>
+                <p>Management Filho da Mãe: <span class="management"></span></p>
+                <p>Booking Filho da Mãe e Ricardo Martins: <span class="booking"></span></p>
             </div>
 
-            <nav class="navBar-menu">
-                <li class="selected"><a href="#tours">TOUR DATES</a></li>
-                <li><a href="#videos">VIDEOS</a></li>
-                <li><a href="#photos">PHOTOS</a></li>
-                <li><a href="#discography">DISCOGRAPHY</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </nav>
-
-            <div class="navBar-language">
-                <li><a href="#.html" class="selected">EN</a></li>
-                <span class="vbar"></span>
-                <li><a href="#.html">PT</a></li>
+            <div class="emailContainer">
+                <h3>E-mail</h3>
+                <hr>
+                <p class="email"></p>
             </div>
 
-            <img src="/images/Filho-da-mae-logo.png" alt="Filho da mae" class="logo">
-        </header>
-
-        <main id="top">
-            <div class="welcomeSection" id="welcome">
-                <img class="artist zoomAnimation" src="images/29595430_1699988993429229_6240458030730774030_n.png">
-                <a href="#tours" class="arrow">
-                  <img src="images/arrow.png">
-                </a>
+            <div class="bandMembersContainer">
+                <h3>Band Members</h3>
+                <hr>
+                <p class="bandMembers"></p>
             </div>
 
-            <div class="tourDatesSection" id="tours">
-                <h2>TOUR DATES</h2>
-                <div class="dateSelector">
-                    <a href="" class="selected">upcoming</a>
-                    <a href="">past</a>
+            <template id="contact">
+                <div class="bookingContainer">
+                    <h3>Booking</h3>
+                    <hr>
+                    <p>Management Filho da Mãe: <span class="management"></span></p>
+                    <p>Booking Filho da Mãe e Ricardo Martins: <span class="booking"></span></p>
                 </div>
 
-                <div class="tourContainer">
-                    <template id="tour">
-                      <div class="tour">
-                          <img class="tourImage">
-                          <div class="tourInfo">
-                              <div class="tourDay"></div>
-                              <div class="tourTitle"></div>
-                              <div class="tourMonth"></div>
-                              <div class="tourDetails">
-                                  <span class="tourWeekDayAndHour"></span>
-                                  <span class="tourSeparator"></span>
-                                  <span class="tourLocation"></span>
-                              </div>
-
-                              <a href="#" class="button tourTicketsBtn">Get Tickets</a>
-                          </div>
-                      </div>
-                    </template>
+                <div class="emailContainer">
+                    <h3>E-mail</h3>
+                    <hr>
+                    <p class="email"></p>
                 </div>
-            </div>
-            
-            <hr class="separator">
 
-            <div class="videoSection" id="videos">
-                <h2>VIDEOS</h2>
+                <div class="bandMembersContainer">
+                    <h3>Band Members</h3>
+                    <hr>
+                    <p class="bandMembers"></p>
+                </div>
+            </template>
 
-                <template id="video">
-                    <div class="video">
-                    </div>
-                </template>
+            <img class="contactImage mobile" src="images/agua-ma2_1200x1200.png">
+            <img class="contactImage desktop" src="images/contactImage.png">
+        </div>
 
-                <a href="" class="button seeMoreBtn">See more</a>
-            </div>
+        <hr class="separator">
+    </main>
 
-            <hr class="separator">
+    <footer>
+        <div class="footerImageContainer">
+            <img src="images/filhodamae-footer.jpg">
+            <a href="#top" class="arrow">
+                <img src="images/arrow.png">
+            </a>
+        </div>
 
-            <div class="photoSection" id="photos">
-                <h2>PHOTOS</h2>
+        <p>Follow</p>
+        <ul class="socialMedia">
+            <li>
+                <a href="#.html"><img src="images/facebookIcon.svg" alt="facebook"></a>
+            </li>
+            <li>
+                <a href="#.html"><img src="images/twitterIcon.svg" alt="twitter"></a>
+            </li>
+            <li>
+                <a href="#.html"><img src="images/instagramIcon.svg" alt="Instagram"></a>
+            </li>
+            <li>
+                <a href="#.html"><img src="images/youTubeIcon.svg" alt="YouTube"></a>
+            </li>
+            <li>
+                <a href="#.html"><img src="images/spotifyIcon.svg" alt="spotify"></a>
+            </li>
+        </ul>
 
-                <template id="photo">
-                    <img class="photo" src="">
-                </template>
-            </div>
+        <div class="copyright">
+            <p>Copyright &copy; 2018 Filho da Mae. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
 
-            <hr class="separator">
-
-            <div class="discographySection" id="discography">
-                <h2>DISCOGRAPHY</h2>
-
-                <template id="record">
-                    <div class="record">
-                        <div class="recordCoverContainer">
-                          <img class="recordCover">
-                          <p class="recordTitle"></p>
-                          <p class="recordDate"></p>
-                        </div>
-
-                        <a href="" class="recordMore button">See more</a>
-                    </div>
-                </template>
-            </div>
-
-            <hr class="separator">
-
-            <div class="aboutSection" id="about">
-                <h2>ABOUT</h2>
-
-                <template id="about">
-                    <img class="aboutImage" src="images/29595430_1699988993429229_6240458030730774030_n.png">
-                    <p class="aboutArtist"></p>
-                </template>
-            </div>
-
-            <hr class="separator">
-
-            <div class="contactSection" id="contact">
-                <h2>CONTACT</h2>
-                    <div class="bookingContainer">
-                        <h3>Booking</h3>
-                        <hr>
-                        <p>Management Filho da Mãe: <span class="management"></span></p>
-                        <p>Booking Filho da Mãe e Ricardo Martins: <span class="booking"></span></p>
-                    </div>
-
-                    <div class="emailContainer">
-                        <h3>E-mail</h3>
-                        <hr>
-                        <p class="email"></p>
-                    </div>
-
-                    <div class="bandMembersContainer">
-                        <h3>Band Members</h3>
-                        <hr>
-                        <p class="bandMembers"></p>
-                    </div>
-
-                <template id="contact">
-                    <div class="bookingContainer">
-                        <h3>Booking</h3>
-                        <hr>
-                        <p>Management Filho da Mãe: <span class="management"></span></p>
-                        <p>Booking Filho da Mãe e Ricardo Martins: <span class="booking"></span></p>
-                    </div>
-
-                    <div class="emailContainer">
-                        <h3>E-mail</h3>
-                        <hr>
-                        <p class="email"></p>
-                    </div>
-
-                    <div class="bandMembersContainer">
-                        <h3>Band Members</h3>
-                        <hr>
-                        <p class="bandMembers"></p>
-                    </div>
-                </template>
-
-                <img class="contactImage mobile" src="images/agua-ma2_1200x1200.png">
-                <img class="contactImage desktop" src="images/contactImage.png">
-            </div>
-
-            <hr class="separator">
-        </main>
-
-        <footer>
-            <div class="footerImageContainer">
-              <img src="images/filhodamae-footer.jpg">
-              <a href="#top" class="arrow">
-                  <img src="images/arrow.png">
-              </a>
-            </div>
-
-            <p>Follow</p>
-            <ul class="socialMedia">
-                <li>
-                    <a href="#.html"><img src="images/facebookIcon.svg" alt="facebook"></a>
-                </li>
-                <li>
-                    <a href="#.html"><img src="images/twitterIcon.svg" alt="twitter"></a>
-                </li>
-                <li>
-                    <a href="#.html"><img src="/images/instagramIcon.svg" alt="Instagram"></a>
-                </li>
-                <li>
-                    <a href="#.html"><img src="/images/youTubeIcon.svg" alt="YouTube"></a>
-                </li>
-                <li>
-                    <a href="#.html"><img src="images/spotifyIcon.svg" alt="spotify"></a>
-                </li>
-            </ul>
-
-            <div class="copyright">
-                <p>Copyright &copy; 2018 Filho da Mae. All rights reserved.</p>
-            </div>
-        </footer>
-    </div>
-
-    <script src="js/main.js"></script> 
-    <script src="js/wordpress.js"></script> 
+<script src="js/main.js"></script>
+<script src="js/wordpress.js"></script>
 </body>
 </html>

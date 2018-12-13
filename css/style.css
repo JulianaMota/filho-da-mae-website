@@ -19,6 +19,10 @@ body {
     background-color: black;
 }
 
+.hide{
+    display: none;
+}
+
 @keyframes backgroundAnimate {
     0% { background-color: black; }
     50% { background-color: #404040; }
