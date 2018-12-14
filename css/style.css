@@ -10,6 +10,10 @@ img {
     width: 100%;
 }
 
+.hide{
+    display: none;
+}
+
 @font-face {
     font-family: "San Francisco";
     src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
@@ -189,7 +193,7 @@ header .navBar-language {
     font-size: 28px;
     z-index: 200;
     position: absolute;
-    top: 50%;
+    top: 370%;
     left: 30%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -472,7 +476,13 @@ main .separator {
 }
 
 main .separatorBlack{
-    
+    grid-column: 1/4;
+    width: 100%;
+    height: 10px;
+    border: black;
+    background-color: #000;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
+    margin: 0 0 50px 0;
 }
 
 /* Video section */
@@ -513,6 +523,35 @@ main .photoSection h2 {
 
 main .photoSection .photo {
     grid-column: auto / span 1;
+    border-radius: 2px;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(42, 38, 38, .9);
+    z-index: 4;
+}
+
+.modal-content {
+    align-self: center;
+    background-color: #000;
+    width: 90vw;
+    margin: 5vw;
+    padding: 1em;
+    z-index: 200;
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: 3px 3px 8px #000;
+    border-radius: 2px;
+}
+
+.modal-content .imgBig{
+    max-width: 700px;
+    justify-self: center;
     border-radius: 2px;
 }
 
@@ -678,6 +717,7 @@ footer .copyright {
     
     header {
         grid-template-columns: 20px 1fr 100px 400px 20px;
+        width: 100%;
     }
 
     header .navBar-menu {

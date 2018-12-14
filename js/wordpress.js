@@ -1,5 +1,7 @@
 const catNav = document.querySelector(".dateSelector");
 const categID = param.get("catid");
+const modal = document.querySelector(".modal");
+const photoID = param.get("photoid");
 
 const templateTours = document.querySelector("#tour").content;
 const templateVideo = document.querySelector("#video").content;
@@ -39,7 +41,7 @@ getCat();
 function showTour(tourList){
     //console.log(tourList);
     tourList.forEach(tour =>{
-        console.log(tour);
+        //console.log(tour);
         const copy = templateTours.cloneNode(true);
 
         if(tour._embedded['wp:featuredmedia']){
@@ -84,7 +86,7 @@ function getVideos(){
 }
 
 function showVideos(videosList){
-    console.log(videosList);
+    //console.log(videosList);
     videosList.forEach(video => {
      //console.log(video);
      const copy = templateVideo.cloneNode(true);
@@ -107,7 +109,7 @@ function getPhotos(){
 function showPhotos(photosList){
     //console.log(photosList);
     photosList.forEach(photo => {
-        //console.log(photo);
+        //console.log(photo.id);
         const copy = templatePhotos.cloneNode(true);
 
         if(photo._embedded['wp:featuredmedia']){
@@ -116,9 +118,29 @@ function showPhotos(photosList){
             copy.querySelector(".photo").remove();
         }
 
+        copy.querySelector(".ImageBig").addEventListener("click", ()=>  showOnePhoto(photo));
+
+        //copy.querySelector(".btnImageBig").addEventListener("click", () => fetch(baseLink+"photos/"+photoID+"?_embed").then(res=>res.json()).then(showOnePhoto));   //then(dataProduct => showDetails(dataProduct)));
+
         document.querySelector(".photoSection").appendChild(copy);
     })
 }
+
+// modal function //
+
+function showOnePhoto(photo){
+    console.log(photo);
+
+    modal.querySelector(".modal-content").id = photo.id;
+    if(photo._embedded['wp:featuredmedia']){
+        modal.querySelector(".imgBig").src=photo._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
+    }else {
+        modal.querySelector(".imgBig").src=photo._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+    }
+    modal.classList.remove("hide");
+}
+
+modal.addEventListener("click", ()=> modal.classList.add("hide"));
 
 getPhotos();
 
