@@ -7,8 +7,8 @@ const templateTours = document.querySelector("#tour").content;
 const templateVideo = document.querySelector("#video").content;
 const templatePhotos = document.querySelector("#photo").content;
 const templateDisc = document.querySelector("#record").content;
-const templateAbout = document.querySelector("#about").content;
-const templateContact = document.querySelector("#contact").content;
+const templateAbout = document.querySelector("#aboutTemplate").content;
+const templateContact = document.querySelector("#contactTemplate").content;
 
 
 // TOUR SECTION //
@@ -86,7 +86,7 @@ function getVideos(){
 }
 
 function showVideos(videosList){
-    //console.log(videosList);
+    console.log(videosList);
     videosList.forEach(video => {
      //console.log(video);
      const copy = templateVideo.cloneNode(true);
@@ -120,7 +120,6 @@ function showPhotos(photosList){
 
         copy.querySelector(".ImageBig").addEventListener("click", ()=>  showOnePhoto(photo));
 
-        //copy.querySelector(".btnImageBig").addEventListener("click", () => fetch(baseLink+"photos/"+photoID+"?_embed").then(res=>res.json()).then(showOnePhoto));   //then(dataProduct => showDetails(dataProduct)));
 
         document.querySelector(".photoSection").appendChild(copy);
     })

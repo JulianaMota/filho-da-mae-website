@@ -348,6 +348,8 @@ main .detailsSection .button:hover {
 
 main .spotifySongs {
     grid-column: 2/2;
+    padding: 20px 0px 30px 0px;
+    justify-self: center;
 }
 
 /* welcome screen */
@@ -732,9 +734,14 @@ footer .copyright {
         padding-top: 5px;
     }
 
-    header .navBar-menu li.selected {
+    header .navBar-menu li:hover {
         border-top: 1px solid white;
     }
+
+    .selectedNav{
+        border-top: 1px solid white;
+    }
+
 
     header .navBar-language {
         grid-column: 3/3;
@@ -809,6 +816,9 @@ footer .copyright {
         grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: 20px;
         grid-row-gap: 20px;
+    }
+    .modal-content .imgBig{
+        max-width: 500px;
     }
 
     main .discographySection {
