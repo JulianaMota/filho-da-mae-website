@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    width: 100%;
 }
 
 :root {
@@ -58,6 +59,8 @@ h2 {
     border-radius: 2px;
     padding: 10px 40px 10px 40px;
     margin-top: 40px;
+    width: 200px;
+    text-align: center;
 }
 
 /* image animation */

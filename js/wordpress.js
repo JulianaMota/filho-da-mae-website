@@ -80,7 +80,7 @@ function sortTour(data){{
 // VIDEO SECTION //
 
 function getVideos(){
-    fetch(baseLink+"videos").then(res => res.json()).then(showVideos);
+    fetch(baseLink+"videos?tags=6").then(res => res.json()).then(showVideos);
 }
 
 function showVideos(videosList){
@@ -93,7 +93,16 @@ function showVideos(videosList){
     })
 }
 
+document.querySelector(".seeMoreBtn").addEventListener("click", getAllVideos);
+
+function getAllVideos(){
+    fetch(baseLink+"videos").then(res => res.json()).then(showVideos);
+}
+
+
 getVideos();
+
+
 
 
 // PHOTOS SECTION //
