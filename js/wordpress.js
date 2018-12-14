@@ -80,11 +80,11 @@ function sortTour(data){{
 // VIDEO SECTION //
 
 function getVideos(){
-    fetch(baseLink+"videos?tags=6").then(res => res.json()).then(showVideos);
+    fetch(baseLink+"videos").then(res => res.json()).then(showVideos);
 }
 
 function showVideos(videosList){
-    //console.log(videosList);
+    console.log(videosList);
     videosList.forEach(video => {
      //console.log(video);
      const copy = templateVideo.cloneNode(true);
@@ -92,13 +92,6 @@ function showVideos(videosList){
      document.querySelector(".videoSection").appendChild(copy);
     })
 }
-
-document.querySelector(".seeMoreBtn").addEventListener("click", getAllVideos);
-
-function getAllVideos(){
-    fetch(baseLink+"videos").then(res => res.json()).then(showVideos);
-}
-
 
 getVideos();
 
