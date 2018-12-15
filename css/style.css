@@ -443,7 +443,7 @@ main .tourDatesSection .tour .tourInfo .tourMonth {
     font-size: 17px;
     font-weight: 600;
     text-align: center;
-    color: #C60000;
+    color: #d0021b;
 }
 
 main .tourDatesSection .tour .tourInfo .tourDetails {
@@ -654,6 +654,7 @@ main .contactSection .bandMembersContainer {
 main .contactSection .contactImage {
     grid-column: 2/2;
     grid-row: 3/5;
+    max-width: 300px;
 }
 
 /* footer */
@@ -735,6 +736,9 @@ footer .copyright {
     }
 
     header .navBar-menu li:hover {
+        border-top: 1px solid white;
+    }
+    header .navBar-menu li.selected{
         border-top: 1px solid white;
     }
 

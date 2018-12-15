@@ -1,7 +1,6 @@
 const catNav = document.querySelector(".dateSelector");
 const categID = param.get("catid");
 const modal = document.querySelector(".modal");
-const photoID = param.get("photoid");
 
 const templateTours = document.querySelector("#tour").content;
 const templateVideo = document.querySelector("#video").content;
@@ -9,6 +8,7 @@ const templatePhotos = document.querySelector("#photo").content;
 const templateDisc = document.querySelector("#record").content;
 const templateAbout = document.querySelector("#aboutTemplate").content;
 const templateContact = document.querySelector("#contactTemplate").content;
+
 
 
 // TOUR SECTION //
