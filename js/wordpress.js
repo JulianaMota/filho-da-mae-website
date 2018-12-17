@@ -44,7 +44,7 @@ function createCatMenu(catList){
         //console.log(cat);
         const newATag = document.createElement("a");
         newATag.textContent=cat.name;
-        newATag.href="#";
+        newATag.href="#tours";
         newATag.addEventListener("click", ()=>getTourByCat(cat.id));
         catNav.appendChild(newATag);
     })

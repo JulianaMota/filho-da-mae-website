@@ -63,7 +63,7 @@ h2 {
     color: #ed213a;
     background-color: transparent;
     border: 2px solid;
-    border-image: linear-gradient(to bottom, #ed213a 0%, #d0021b 100%)1 30 round;
+    border-image: linear-gradient(to bottom, #ed213a 0%, #d0021b 100%)1;
     border-radius: 2px;
     padding: 10px 40px 10px 40px;
     margin-top: 30px;
@@ -270,6 +270,7 @@ main .detailsSection {
     grid-template-columns: 2fr 3fr;
     grid-column-gap: 20px;
     padding-top: 20px;
+    padding-bottom: 40px;
 }
 
 main .detailsSection p {
@@ -345,9 +346,7 @@ main .detailsSection .button {
     padding: 10px 10px 10px 10px;
     text-align: center;
     font-size: 14px;
-
-    border-image-source: linear-gradient(to right, white, red);
-    border-image-slice: 10;
+    border-image: linear-gradient(to right, white 0%, #d0021b 100%)1;
     color: white;
 }
 
@@ -362,6 +361,9 @@ main .spotifySongs {
     grid-column: 2/2;
     padding: 20px 0px 30px 0px;
     justify-self: center;
+}
+main .spotifySongs iframe{
+    width: 100%;
 }
 
 /* welcome screen */
@@ -475,7 +477,6 @@ main .tourDatesSection .tour .tourInfo .tourSeparator {
 main .tourDatesSection .tour .tourTicketsBtn {
     grid-column: 1/-1;
     justify-self: center;
-    border-radius: 50%;
 }
 
 /* Separator */
@@ -513,13 +514,12 @@ main .videoSection {
 main .videoSection .video {
     grid-column: auto / span 1;
     align-self: stretch;
+    justify-self: center;
 }
-iframe{
-    width: 100%;
-}
+
 main .videoSection .seeMoreBtn {
     grid-column: 1/-1;
-    grid-row: 12/13;
+    grid-row: 11/12;
     justify-self: center;
 }
 
@@ -829,12 +829,20 @@ footer .copyright {
 
     main .videoSection {
         grid-template-columns: 1fr 1fr;
-        grid-row-gap: 30px;
+        grid-row-gap: 40px;
+        grid-column-gap: 50px;
     }
 
     main .videoSection h2 {
         grid-column: 1/-1;
     }
+
+    main .videoSection .video {
+        grid-column: auto / span 1;
+        align-self: stretch;
+        justify-self: stretch;
+    }
+
 
     main .photoSection {
         grid-template-columns: 1fr 1fr 1fr;
@@ -904,6 +912,7 @@ footer .copyright {
     /* details page */
     main.detailsPage {
         grid-template-columns: 80px 1fr 2fr 80px;
+        grid-column-gap: 20px;
     }
 
     main.detailsPage .detailsSection {
@@ -936,5 +945,9 @@ footer .copyright {
 
     main.detailsPage .spotifySongs {
         grid-column: 3/3;
+    }
+
+    iframe{
+        width: 100%;
     }
 }

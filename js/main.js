@@ -10,7 +10,7 @@ container.addEventListener("click", toggleMenu);
 const menuLinks = document.querySelectorAll(".burger-menu a");
 menuLinks.forEach(applyClick);
 
-function applyClick(item) {
+function applyClick(item){
     item.addEventListener("click", toggleMenu);
 }
 
