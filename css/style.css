@@ -63,11 +63,12 @@ h2 {
     color: #ed213a;
     background-color: transparent;
     border: 2px solid;
-    border-image: linear-gradient(to bottom, #ed213a 0%, #d0021b 100%)1;
+    border-image: linear-gradient(to bottom, #ed213a 0%, #d0021b 100%)1 30 round;
     border-radius: 2px;
     padding: 10px 40px 10px 40px;
     margin-top: 30px;
     text-align: center;
+    display: block;
 }
 
 /* image animation */
@@ -186,7 +187,7 @@ header .navBar-language {
 }
 
 .burger-menu .appear {
-    opacity: 1
+    display: block;
 }
 
 .burger-menu label ul {
@@ -197,7 +198,7 @@ header .navBar-language {
     left: 40%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    opacity: 0;
+    display: none;
     -webkit-transition: .25s 0s ease-in-out;
     transition: .25s 0s ease-in-out;
 }
@@ -277,10 +278,20 @@ main .detailsSection p {
 }
 
 main .back {
-    grid-column: 1/-1;
+    grid-column: 2/-1;
     width: 40px;
-    justify-self: right;
-    margin-right: 40px;
+    justify-self: left;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+}
+
+.arrowDetail{
+    width: 30px;
+    align-self: center;
+}
+
+main .back p{
+    color: gray;
 }
 
 main .detailsSection .by, main .detailsSection .albumYear, main .detailsSection .albumSongsNumber {
@@ -464,6 +475,7 @@ main .tourDatesSection .tour .tourInfo .tourSeparator {
 main .tourDatesSection .tour .tourTicketsBtn {
     grid-column: 1/-1;
     justify-self: center;
+    border-radius: 50%;
 }
 
 /* Separator */
@@ -500,9 +512,11 @@ main .videoSection {
 
 main .videoSection .video {
     grid-column: auto / span 1;
-    justify-self: center;
+    align-self: stretch;
 }
-
+iframe{
+    width: 100%;
+}
 main .videoSection .seeMoreBtn {
     grid-column: 1/-1;
     grid-row: 12/13;

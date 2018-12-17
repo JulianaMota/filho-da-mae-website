@@ -1,5 +1,7 @@
 const catNav = document.querySelector(".dateSelector");
 const categID = param.get("catid");
+
+
 const modal = document.querySelector(".modal");
 
 const templateTours = document.querySelector("#tour").content;
@@ -9,7 +11,7 @@ const templateDisc = document.querySelector("#record").content;
 const templateAbout = document.querySelector("#aboutTemplate").content;
 const templateContact = document.querySelector("#contactTemplate").content;
 
-
+let allData = 0;
 
 // TOUR SECTION //
 
@@ -22,7 +24,18 @@ function getCat(){
 }
 
 function getTourByCat(categID){
-    fetch(baseLink+"tour_dates?categories="+categID+"&_embed").then(e=>e.json()).then(showTour);
+    //e.preventDefault();
+    let temp = [];
+    allData.forEach(cat=>{
+        console.log(cat.categories[0], categID);
+        if(cat.categories[0]==categID){
+            console.log(cat)
+            temp.push(cat)
+        }
+    })
+    //allData.filter(categID=>categories[0]==categID);
+    showTour(temp)
+    //fetch(baseLink+"tour_dates?categories="+categID+"&_embed").then(e=>e.json()).then(showTour);
 }
 
 function createCatMenu(catList){
@@ -31,7 +44,8 @@ function createCatMenu(catList){
         //console.log(cat);
         const newATag = document.createElement("a");
         newATag.textContent=cat.name;
-        newATag.href="?catid="+cat.id;
+        newATag.href="#";
+        newATag.addEventListener("click", ()=>getTourByCat(cat.id));
         catNav.appendChild(newATag);
     })
 }
@@ -39,6 +53,8 @@ function createCatMenu(catList){
 getCat();
 
 function showTour(tourList){
+    const container = document.querySelector(".tourContainer");
+    container.textContent="";
     //console.log(tourList);
     tourList.forEach(tour =>{
         //console.log(tour);
@@ -57,20 +73,20 @@ function showTour(tourList){
         copy.querySelector(".tourLocation").textContent=tour.acf.location;
 
         copy.querySelector(".tourTicketsBtn").href=tour.acf.ticket_link;
-
-
-        document.querySelector(".tourContainer").appendChild(copy);
+        container.appendChild(copy);
 
     })
 }
 
-if(categID){
+/*if(categID){
     getTourByCat(categID);
 }else{
     getTour();
-}
+}*/
 
+getTour();
 function sortTour(data){{
+    allData=data;
     data.sort(function(a, b){
         return b.acf.date - a.acf.date
     })
@@ -86,7 +102,7 @@ function getVideos(){
 }
 
 function showVideos(videosList){
-    console.log(videosList);
+    //console.log(videosList);
     videosList.forEach(video => {
      //console.log(video);
      const copy = templateVideo.cloneNode(true);
