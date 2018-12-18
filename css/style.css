@@ -797,13 +797,18 @@ footer .copyright {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-
+    
     main .tourDatesSection h2 {
         grid-column: 1/-1;
+    }
+    
+    main .tourDatesSection .tour .tourImage {
+        height: 600px;
     }
 
     main .tourDatesSection .dateSelector {
         grid-column: 1/1;
+        grid-gap: 80px;
         justify-content: center;
         justify-self: left;
     }
@@ -832,6 +837,11 @@ footer .copyright {
         grid-column: auto / span 1;
         align-self: stretch;
         justify-self: stretch;
+        height: 400px;
+    }
+    
+    main .videoSection .video iframe {
+        height: 100%;
     }
 
 
