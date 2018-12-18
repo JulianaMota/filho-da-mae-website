@@ -351,10 +351,10 @@ main .detailsSection .button:hover {
 main .spotifySongs {
     grid-column: 2/2;
     padding: 20px 0px 30px 0px;
-    justify-self: center;
 }
 main .spotifySongs iframe{
     width: 100%;
+    min-height: 100%;
 }
 
 /* welcome screen */
