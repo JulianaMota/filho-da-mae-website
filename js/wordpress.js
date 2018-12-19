@@ -24,7 +24,6 @@ function getCat(){
 }
 
 function getTourByCat(categID){
-    //e.preventDefault();
     let temp = [];
     allData.forEach(cat=>{
         console.log(cat.categories[0], categID);
@@ -33,9 +32,7 @@ function getTourByCat(categID){
             temp.push(cat)
         }
     })
-    //allData.filter(categID=>categories[0]==categID);
     showTour(temp)
-    //fetch(baseLink+"tour_dates?categories="+categID+"&_embed").then(e=>e.json()).then(showTour);
 }
 
 function createCatMenu(catList){
@@ -78,11 +75,6 @@ function showTour(tourList){
     })
 }
 
-/*if(categID){
-    getTourByCat(categID);
-}else{
-    getTour();
-}*/
 
 getTour();
 function sortTour(data){{
