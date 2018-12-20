@@ -905,7 +905,6 @@ footer .copyright {
     main .contactSection .contactImage {
         grid-column: 2/2;
         grid-row: 2/5;
-        height: 100%;
         width: auto;
         justify-self: center;
     }
